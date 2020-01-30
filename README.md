@@ -10,7 +10,7 @@ The posts will have
 
 * The content
 
-*  The date posted
+* The date posted
 
 * The author.
 
@@ -22,6 +22,20 @@ Each user will also have a profile , with their details such as
 
 * Email address
 
-* Profile picture.
+* Profile picture
+
+* Posts
 
 The posts and the user details will be stored in a database using Django models and sqlite3.
+
+Pagination has been implemented so that if there are a lot of posts it doesn't slow down the website. By deafult fice posts are shows in the front page and then a link is given at the end of the page allowing the user to navigate to other pages:
+
+* First page
+
+* Previous page
+
+* Plus and minus three pages from the current page number
+
+* Next page
+
+* Last page
