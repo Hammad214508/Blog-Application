@@ -1,10 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-# Create your views here.
-# Create a  function to manage the traffic from the home
 from .models import Post
+from django.contrib.auth.models import User
 # Takes a request and return what you want the user to see
 
 # Dummy data
@@ -36,7 +35,21 @@ class PostListView(ListView):
     template_name = 'blog/home.html' # <app>/model_<viewtype>/html
     context_object_name = 'posts' # context are called posts
     ordering = ['-date_posted'] #To order the posts, newst first
+    paginate_by = 5 #That many posts per page
+    # To navigate manually use /?page=1 \
 
+# All the posts for a userå
+class UserPostListView(ListView):
+    model = Post
+    template_name = 'blog/user_posts.html' # <app>/model_<viewtype>/html
+    context_object_name = 'posts' # context are called posts
+    paginate_by = 2 #That many posts per page
+
+    def get_queryset(self):
+        # Get the user or return a 404 if doesn't exist
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        # Get all the posts by that user, sort by new
+        return Post.objects.filter(author=user).order_by('-date_posted')
 
 class PostDetailView(DetailView):
     model = Post
