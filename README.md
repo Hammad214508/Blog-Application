@@ -28,7 +28,10 @@ Each user will also have a profile , with their details such as
 
 The posts and the user details will be stored in a database using Django models and sqlite3.
 
-Pagination has been implemented so that if there are a lot of posts it doesn't slow down the website. By deafult fice posts are shows in the front page and then a link is given at the end of the page allowing the user to navigate to other pages:
+Pagination has been implemented so that if there are a lot of posts it
+doesn't slow down the website. By default five posts are shown in the front
+page and then a links are given at the end of the page allowing the user to
+navigate to other pages:
 
 * First page
 
