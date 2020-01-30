@@ -130,3 +130,10 @@ LOGIN_URL='login'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #path for the files to be saved (uploaded files)
 MEDIA_URL = '/media/' #public url for over directory
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_POST = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "Email"
+EMAIL_HOST_PASSWORD = "Password"

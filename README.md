@@ -42,3 +42,5 @@ navigate to other pages:
 * Next page
 
 * Last page
+
+Reset a password feature is being implemented
