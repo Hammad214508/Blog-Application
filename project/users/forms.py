@@ -11,7 +11,7 @@ class UserRegisterForm(UserCreationForm):
 
 # Update the user's profile
 class UserUpdateForm(forms.ModelForm):
-    email = forms.EmailField()#required=False
+    email = forms.EmailField()#required=False so that the user can submit the form with the email being blank
     class Meta:
         model = User
         fields = ['username', 'email']

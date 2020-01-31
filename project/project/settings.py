@@ -25,6 +25,7 @@ SECRET_KEY = ')69=4zr@0waw#wb@=hw$xxz%q2qj&6slrp4)s&str9+v(f25zg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# String IP addess of the server
 ALLOWED_HOSTS = []
 
 
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+
     # Added this top lines
 
     'django.contrib.admin',
@@ -42,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # AWS stuff
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -122,6 +126,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# After this run
+#   python3 manage.py collectstatic
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -135,5 +143,20 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_POST = 587
 EMAIL_USE_TLS = True
+
+# Need to set up environment variables for these
 EMAIL_HOST_USER = "Email"
 EMAIL_HOST_PASSWORD = "Password"
+
+
+# https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+# AWS set up
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+# If someone uploads a file with the same name shouldn't overwrite
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
