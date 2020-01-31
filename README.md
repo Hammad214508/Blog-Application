@@ -46,7 +46,20 @@ navigate to other pages:
 Reset a password feature has been implemented, an email is sent to the user with the instructions on how to reset the password associated with their account. (Having some issues with it, will be fixed soon)
 
 # Deploying the application
+ Heroku is a platform that abstracts away a lot of the low-level system administration and allows us to easily deploy, update, and rollback changes for our application.
 
+     brew tap heroku/brew && brew install heroku
+
+Typing heroku in the terminal will show all the commands available.
+
+    heroku login
+
+Need
+    pip install gunicorn (sudo python3 -m pip install gunicorn)
+
+heroku create hammad-blog-app
+
+heroku open  //https://hammad-blog-app.herokuapp.com
 
 # Current System
 

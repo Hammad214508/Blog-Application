@@ -130,7 +130,12 @@ USE_TZ = True
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # After this run
 #   python3 manage.py collectstatic
+
+# STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #path for the files to be saved (uploaded files)
+
 STATIC_URL = '/static/'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL='blog-home'
