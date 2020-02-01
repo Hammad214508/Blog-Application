@@ -60,13 +60,15 @@ Setting it up:
 
 
     heroku login
-    
+
     heroku create hammad-blog-app
-    
+
     heroku open  //https://hammad-blog-app.herokuapp.com
-    
+
     git push heroku master  
-    
+
+Gonna use Postgres instead of sqlite3
+
 
 # Current System
 
