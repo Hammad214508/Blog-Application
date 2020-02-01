@@ -20,13 +20,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')69=4zr@0waw#wb@=hw$xxz%q2qj&6slrp4)s&str9+v(f25zg'
+
+# SECRET_KEY = ')69=4zr@0waw#wb@=hw$xxz%q2qj&6slrp4)s&str9+v(f25zg'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 # String IP addess of the server
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hammad-blog-app.herokuapp.com']
 
 
 # Application definition
@@ -150,8 +152,8 @@ EMAIL_POST = 587
 EMAIL_USE_TLS = True
 
 # Need to set up environment variables for these
-EMAIL_HOST_USER = "Email"
-EMAIL_HOST_PASSWORD = "Password"
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
