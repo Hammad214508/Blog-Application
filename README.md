@@ -1,4 +1,5 @@
 # Social-Media Application
+https://hammad-blog-app.herokuapp.com
 
 I am currently developing a full-featured web application using Django framework and Python. It is a social media styled application where different users can post e.g. blog posts, twitter updates and similar posts. It also uses HTML and CSS for the front-end.
 
@@ -46,28 +47,16 @@ navigate to other pages:
 Reset a password feature has been implemented, an email is sent to the user with the instructions on how to reset the password associated with their account. (Having some issues with it, will be fixed soon)
 
 # Deploying the application
- Heroku is a platform that abstracts away a lot of the low-level system administration and allows us to easily deploy, update, and rollback changes for our application.
+Link: https://hammad-blog-app.herokuapp.com
 
- Need :
+Heroku is a platform that abstracts away a lot of the low-level system administration and allows us to easily deploy, update, and rollback changes for our application.
 
-        pip install gunicorn (sudo python3 -m pip install gunicorn)
+Uses AWS S3 to store data.
 
-        brew tap heroku/brew && brew install heroku
-
-Typing "heroku" in the terminal will show all the commands available.
-
-Setting it up:
+Changed to use Postgres instead of sqlite3
 
 
-    heroku login
 
-    heroku create hammad-blog-app
-
-    heroku open  //https://hammad-blog-app.herokuapp.com
-
-    git push heroku master  
-
-Gonna use Postgres instead of sqlite3
 
 
 # Current System
@@ -93,37 +82,46 @@ requirements.txt:
 
     asgiref==3.2.3
 
+    boto3==1.11.9
+
+    botocore==1.14.9
+
+    dj-database-url==0.5.0
+
     Django==3.0.2
 
     django-crispy-forms==1.8.1
+
+    django-heroku==0.3.1
+
+    django-storages==1.8
+
+    docutils==0.15.2
+
+    gunicorn==20.0.4
+
+    jmespath==0.9.4
 
     mysqlclient==1.4.6
 
     Pillow==7.0.0
 
+    psycopg2==2.8.4
+
+    python-dateutil==2.8.1
+
     pytz==2019.3
+
+    s3transfer==0.3.2
 
     six==1.12.0
 
     sqlparse==0.3.0
 
+    urllib3==1.25.8
 
+    whitenoise==5.0.1
 
-Set up AWS S3 (System Storage Service) so that we can host our media files from that service instead of our local filesystem.
-
-Created a new bucket that will hold the files. Name has to be universally unique in the world.
-
-bucket name: blog-files-hammad
-
-Allowed Corgs permission
-
-IAM (Identity and Access Management) to  create a user and give it AmazonS3fullAccess
-
-Set up AWS access key id and secret access key as environment variables so that they are not shown in the code. Also set up a environment variable for the bucket name just in case it changes
-
-    pip intall boto3 (sudo python3 -m pip install boto3)
-
-    pip intall django-storages(sudo python3 -m pip install django-storages)
 
 # Further improvements
 
