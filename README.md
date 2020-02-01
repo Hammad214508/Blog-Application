@@ -3,7 +3,7 @@ https://hammad-blog-app.herokuapp.com
 
 I am currently developing a full-featured web application using Django framework and Python. It is a social media styled application where different users can post e.g. blog posts, twitter updates and similar posts. It also uses HTML and CSS for the front-end.
 
-I was inspired to do this project when I saw my friend's blog made with Wix, it had limited functionality and could easily be exploited e.g. opening the site with a private browser allowed to like the post every time.
+I was inspired to do this project when I saw my friend's blog made with Wix, it had limited functionality and had some bugs.
 
 The posts will have
 
@@ -56,24 +56,21 @@ Uses AWS S3 to store data.
 Changed to use Postgres instead of sqlite3
 
 
+# Developers Info
 
-
-
-# Current System
+Getting started: https://www.djangoproject.com/start/
 
 Setting up an virtual environment to use it:
 
-    sudo apt-get install python3-pip
+    sudo apt-get install python3-pip //Get python 3
 
-    sudo apt-get install python3-venv
+    sudo apt-get install python3-venv //Get the environmet
 
-    python3 -m venv <path>/venv
+    python3 -m venv <path>/venv //<path> will be where the environment is set
 
     source venv/bin/activate
 
-    //Download the dependencies
-
-    pip install -r requirements.txt
+    pip install -r requirements.txt //Download the dependencies
 
 
 requirements.txt:
@@ -139,7 +136,7 @@ Set up a firewall:
 
     sudo ufw allow ssh
 
-    sudo ufw allow 8000 // The port being used
+    sudo ufw allow 8000 // The port being used, would need to change for HTTPS
 
     sudo ufw enable
 
