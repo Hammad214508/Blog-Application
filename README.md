@@ -73,8 +73,6 @@ Setting up an virtual environment to use it:
 
     //Download the dependencies
 
-    pip freeze > requirements.txt
-
     pip install -r requirements.txt
 
 
